@@ -14,10 +14,6 @@ build/
 dist/
 out/
 
-# TypeScript configuration
-tsconfig.json
-tsconfig.*.json
-
 # Yarn PnP files
 .yarn/*
 
