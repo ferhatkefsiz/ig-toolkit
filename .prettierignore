@@ -1,16 +1,30 @@
-# Ignore build artifacts
-build/
-
-# Ignore specific files
-dist/
-*.min.js
-
-# Ignore all files in a directory
+# Dependency directory
 node_modules/
 
-# Ignore hidden files
+# Compiled output
+build/
+dist/
+out/
+
+# Ignore specific files
+*.min.js
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating System Files
+Thumbs.db
+.DS_Store
+
+# hidden files
 .*
 
-# Ignore specific directories
+# specific directories
 docs/
 coverage/

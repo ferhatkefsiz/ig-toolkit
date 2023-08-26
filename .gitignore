@@ -2,9 +2,8 @@
 logs
 *.log
 
-# Dependency directories
+# Dependency directory
 node_modules/
-dist/
 
 # Environment variables
 .env
