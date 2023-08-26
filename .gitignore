@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+dist/
+
+# Environment variables
+.env
+
+# Compiled output
+build/
+dist/
+out/
+
+# TypeScript configuration
+tsconfig.json
+tsconfig.*.json
+
+# Yarn PnP files
+.yarn/*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating System Files
+Thumbs.db
+.DS_Store
