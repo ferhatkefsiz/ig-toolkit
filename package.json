@@ -1,20 +1,25 @@
 {
   "name": "ig-toolkit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tools for Instagram",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ferhatkefsiz/ig-toolkit.git"
-  },
+  "type": "module",
+  "repository": "git@github.com:ferhatkefsiz/ig-toolkit.git",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ferhat Kefsiz <hello@ferhat.io>",
+  "license": "MIT",
   "homepage": "https://github.com/ferhatkefsiz/ig-toolkit#readme",
   "bugs": {
     "url": "https://github.com/ferhatkefsiz/ig-toolkit/issues"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.6"
   }
 }
