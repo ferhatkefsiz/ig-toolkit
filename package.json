@@ -14,24 +14,25 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "prettier --check .",
-    "format": "prettier --write ."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format && git add -A ."
-    }
+    "lint": "eslint .",
+    "lint:fix": "yarn run lint --fix .",
+    "prettier": "npx prettier --check .",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "yarn run prettier:fix && yarn run lint:fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
-    "typescript": "^5.2.2"
+    "typescript": "4.3.5"
   },
   "devDependencies": {
     "@types/node": "^20.5.6",
     "@types/prettier": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "eslint": "^8.48.0",
     "husky": "^8.0.3",
+    "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.2"
   }
 }
