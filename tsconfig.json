@@ -5,8 +5,11 @@
     "target": "esnext",
     "outDir": "dist",
     "sourceMap": true,
-    "baseUrl": "./index.ts"
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
-  "include": ["index.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist/**/*.js"]
 }
