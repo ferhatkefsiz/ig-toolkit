@@ -19,6 +19,7 @@ dotenv.config()
 
   await login(username, password)
 
+  // Use this directory to generate json files (`followers.json`, `following.json`)
   createDirectory("./dist/data")
 
   await prompt().then((res) => {
