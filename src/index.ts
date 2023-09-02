@@ -4,6 +4,7 @@ import chalk from "chalk"
 
 import { login } from "./modules/login"
 import { logout } from "./modules/logout"
+import { prompt } from "./helpers/prompt"
 
 // Load environment variables from the .env file
 dotenv.config()
@@ -16,7 +17,12 @@ dotenv.config()
   const password = process.env.IG_PASSWORD || ""
 
   await login(username, password)
-  console.log("hello world")
+
+  await prompt().then((res) => {
+    if (res.CHOICE_OPTIONS === "GET_INFO") {
+      console.log("getting info account")
+    }
+  })
 
   await logout()
 })()
