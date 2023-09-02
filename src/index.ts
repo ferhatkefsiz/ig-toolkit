@@ -5,6 +5,7 @@ import chalk from "chalk"
 import { login } from "./modules/login"
 import { logout } from "./modules/logout"
 import { prompt } from "./helpers/prompt"
+import createDirectory from "./utils/create-directory"
 
 // Load environment variables from the .env file
 dotenv.config()
@@ -17,6 +18,8 @@ dotenv.config()
   const password = process.env.IG_PASSWORD || ""
 
   await login(username, password)
+
+  createDirectory("./dist/data")
 
   await prompt().then((res) => {
     if (res.CHOICE_OPTIONS === "GET_INFO") {
