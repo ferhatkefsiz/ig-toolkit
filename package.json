@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Tools for Instagram",
   "main": "index.js",
-  "type": "module",
   "repository": "git@github.com:ferhatkefsiz/ig-toolkit.git",
   "keywords": [],
   "author": "Ferhat Kefsiz <hello@ferhat.io>",
@@ -13,26 +12,41 @@
     "url": "https://github.com/ferhatkefsiz/ig-toolkit/issues"
   },
   "scripts": {
-    "build": "tsc",
-    "lint": "eslint .",
-    "lint:fix": "yarn run lint --fix .",
-    "prettier": "npx prettier --check .",
-    "prettier:fix": "npm run prettier -- --write",
-    "format": "yarn run prettier:fix && yarn run lint:fix",
+    "prebuild": "rimraf dist",
+    "build": "babel src --out-dir dist --copy-files --extensions '.ts,.js'",
+    "lint": "eslint . --fix",
+    "lint:fix": "eslint . ",
+    "prettier": "./node_modules/.bin/prettier --write .",
+    "format": "yarn run prettier && yarn run lint",
     "prepare": "husky install"
   },
   "dependencies": {
+    "chalk": "4.1.2",
     "dotenv": "^16.3.1",
-    "typescript": "4.3.5"
+    "figlet": "^1.6.0",
+    "inquirer": "^8.0.0",
+    "instagram-private-api": "^1.45.3",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@babel/register": "^7.6.2",
+    "@babel/cli": "^7.22.10",
+    "@babel/runtime": "^7.22.11",
+    "@types/figlet": "^1.5.6",
     "@types/node": "^20.5.6",
     "@types/prettier": "^3.0.0",
+    "@types/inquirer": "^9.0.3",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "eslint": "^8.48.0",
-    "husky": "^8.0.3",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.2"
+    "husky": "^8.0.3",
+    "prettier": "^3.0.2",
+    "ts-node": "^10.9.1"
   }
 }
