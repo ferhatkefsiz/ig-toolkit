@@ -1,4 +1,4 @@
-import { ig } from "./client"
+import { ig } from "./login"
 
 export async function logout(): Promise<void> {
   try {
