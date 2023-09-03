@@ -1,4 +1,6 @@
-import { ig } from "./client"
+import { IgApiClient } from "instagram-private-api"
+
+export const ig = new IgApiClient()
 
 export async function login(username: string, password: string): Promise<void> {
   try {
