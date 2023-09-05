@@ -63,7 +63,7 @@ Even the smallest change is appreciated. It can be a typo error or fixing a bug.
 
 This project is licensed under the MIT License - see the [LICENSE.md][license] file for details.
 
-[readme]: https://github.com/ferhatkefsiz/ig-toolkit#README
+[readme]: https://github.com/ferhatkefsiz/ig-toolkit#readme
 [issues]: https://github.com/ferhatkefsiz/ig-toolkit/issues
 [email]: mailto:hello@ferhat.io
 [license]: https://github.com/ferhatkefsiz/ig-toolkit/LICENSE.md
