@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 import { login } from "./modules/login"
 import { logout } from "./modules/logout"
 import { fetchFollowers } from "./modules/followers"
+import { fetchFollowings } from "./modules/followings"
 
 dotenv.config()
 
@@ -63,13 +64,19 @@ async function main() {
       name: "CHOICE_OPTIONS",
       type: "list",
       message: "Select your option",
-      choices: [{ name: "Get Followers", value: "GET_FOLLOWERS" }],
+      choices: [
+        { name: "Get Followers", value: "GET_FOLLOWERS" },
+        { name: "Get Followings", value: "GET_FOLLOWINGS" },
+      ],
     },
   ])
 
   switch (choice.CHOICE_OPTIONS) {
     case "GET_FOLLOWERS":
       await fetchFollowers()
+      break
+    case "GET_FOLLOWINGS":
+      await fetchFollowings()
       break
   }
 
