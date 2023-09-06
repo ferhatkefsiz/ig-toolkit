@@ -12,6 +12,7 @@
     "url": "https://github.com/ferhatkefsiz/ig-toolkit/issues"
   },
   "scripts": {
+    "start": "yarn run clean && yarn run build && node ./dist/index.js",
     "clean": "rimraf dist",
     "build": "babel src --out-dir dist --copy-files --extensions '.ts,.js'",
     "lint": "eslint . --fix",
