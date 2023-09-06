@@ -30,7 +30,8 @@ export async function fetchUnfollowers(): Promise<void> {
       // this makes "https://www.instagram.com/username" to "username"
       const username = usersToUnfollower.split("/").slice(-1)[0]
 
-      await ig.friendship.destroy(username)
+      const userId = await ig.user.getIdByUsername(username)
+      await ig.friendship.destroy(userId)
 
       console.log(chalk.yellowBright(`Unfollowed ${usersToUnfollower}`))
 
