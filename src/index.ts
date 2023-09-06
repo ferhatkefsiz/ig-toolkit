@@ -10,37 +10,53 @@ import { fetchFollowers } from "./modules/followers"
 dotenv.config()
 
 async function main() {
+  const usernameENV = process.env.IG_USERNAME
+  const passwordENV = process.env.IG_PASSWORD
+
   console.log(chalk["red"](figlet.textSync("ig-toolkit", { horizontalLayout: "universal smushing" })))
 
-  const credentials = await inquirer.prompt([
-    {
-      name: "username",
-      type: "input",
-      message: "Enter your username:",
-      validate: function (value) {
-        if (value.length) {
-          return true
-        } else {
-          return "Please enter your username."
-        }
-      },
-    },
-    {
-      type: "password",
-      name: "password",
-      message: "Enter your password:",
-      mask: "*",
-      validate: function (value) {
-        if (value.length >= 8) {
-          return true
-        } else {
-          return "Password must be at least 8 characters long."
-        }
-      },
-    },
-  ])
+  let credentials
 
-  await login(credentials.username, credentials.password)
+  if (usernameENV && passwordENV) {
+    credentials = { username: usernameENV, password: passwordENV }
+  } else {
+    credentials = await inquirer.prompt([
+      {
+        name: "username",
+        type: "input",
+        message: "Enter your username:",
+        validate: function (value) {
+          if (value.length) {
+            return true
+          } else {
+            return "Please enter your username."
+          }
+        },
+      },
+      {
+        type: "password",
+        name: "password",
+        message: "Enter your password:",
+        mask: "*",
+        validate: function (value) {
+          if (value.length >= 8) {
+            return true
+          } else {
+            return "Password must be at least 8 characters long."
+          }
+        },
+      },
+    ])
+  }
+
+  console.log(`You entered as username: ${credentials.username} and password: ${credentials.password}`)
+
+  const loginSuccessful = await login(credentials.username, credentials.password)
+
+  if (!loginSuccessful) {
+    console.log(chalk.redBright("Login failed. Exiting."))
+    return
+  }
 
   const choice = await inquirer.prompt([
     {
