@@ -4,10 +4,9 @@
     "module": "commonjs",
     "lib": ["es6"],
     "allowJs": true,
-    "outDir": "build",
+    "outDir": "dist",
     "rootDir": "src",
     "strict": true,
-    "noImplicitAny": false,
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
