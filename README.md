@@ -8,11 +8,12 @@ An Instagram automation software that simplifies and automates various actions o
 - **Data Export:**
 
   - **Followers List:** Export your list of followers to a JSON file.
-  - **Followings List:** Export your list of followings to a JSON file
+  - **Followings List:** Export your list of followings to a JSON file.
 
-- **Follower Management:**
+- **Follow Management:**
 
   - **Identify Non-Followers:** Detect who does not follow you back and unfollow.
+  - **Target User:** Follow someone else's followers or followings
 
 
 ## Upcoming Features
