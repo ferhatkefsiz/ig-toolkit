@@ -13,7 +13,7 @@ export async function sleep(seconds = 2) {
 
 export async function sleepRandom() {
   const random = randomNumber(2, 6) // wait for min 2 and max 6 seconds
-  console.log(chalk.dim(`sleep for: ${random}`))
+  console.log(chalk.dim(`Sleeping ${random}secs to prevent getting temp blocked`))
 
   await sleep(random)
 }
