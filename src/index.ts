@@ -8,6 +8,7 @@ import { logout } from "./modules/logout"
 import { fetchFollowers } from "./modules/followers"
 import { fetchFollowings } from "./modules/followings"
 import { fetchUnfollowers } from "./modules/unfollowers"
+import { followOther } from "./modules/followOther"
 
 dotenv.config()
 
@@ -69,6 +70,7 @@ async function main() {
         { name: "Get Followers", value: "GET_FOLLOWERS" },
         { name: "Get Followings", value: "GET_FOLLOWINGS" },
         { name: "Find Unfollowers and Unfollow", value: "GET_UNFOLLOWERS" },
+        { name: "Follow someone else's followers or followings", value: "FOLLOW_OTHER" },
       ],
     },
   ])
@@ -77,6 +79,7 @@ async function main() {
     case "GET_FOLLOWERS":
       await fetchFollowers()
       break
+
     case "GET_FOLLOWINGS":
       await fetchFollowings()
       break
@@ -85,6 +88,10 @@ async function main() {
       await fetchFollowers()
       await fetchFollowings()
       await fetchUnfollowers()
+      break
+
+    case "FOLLOW_OTHER":
+      await followOther()
       break
   }
 
