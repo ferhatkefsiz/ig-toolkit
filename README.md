@@ -1,12 +1,31 @@
 ## Introduction
 
-The `ig-toolkit` is a TypeScript project that allows you to perform various Instagram-related tasks, such as fetching followers and more. This tool simplifies these tasks and provides an easy-to-use command-line interface.
+An Instagram automation software that simplifies and automates various actions on the platform, providing a user-friendly command-line interface.
 
-## Features
+## Core Features
 
-- Login to your Instagram account securely.
-- Fetch your followers list.
-- [More features will be added as the project develops]
+- **Secure Login:** Users can securely log in to their Instagram accounts, ensuring the safety of their credentials.
+- **Data Export:**
+
+  - **Followers List:** Export your list of followers to a JSON file.
+  - **Followings List:** Export your list of followings to a JSON file
+
+- **Follower Management:**
+
+  - **Identify Non-Followers:** Detect who does not follow you back and unfollow.
+
+
+## Upcoming Features
+- Two-Factor Authentication (2FA)
+- Approve Pending-requests.
+- Detect blocked users and unblock.
+- Auto like and comment on feed.
+- Edit account. (username, biography, email, gender etc.)
+- Upload photo.
+- Upload story.
+- Send direct messages.
+- Target location add people and like posts.
+- Whitelist people you don't want to unfollow.
 
 ## Prerequisites
 
@@ -40,31 +59,34 @@ IG_PASSWORD="[INSERT_INSTAGRAM_PASSWORD]"
 
 ## Available scripts
 
-- `clean` - remove coverage data, transpiled files,
-- `build` - transpile TypeScript to JavaScript,
-- `format` - format source files,
+- `start` - run application
+- `clean` - remove coverage data, transpiled files
+- `build` - transpile TypeScript to JavaScript
+- `format` - format source files
+
+## Instagram Action Blocked
+
+Action blocks are typically caused by the exceeded number of actions you perform in a window of time — per hour or day. Once you exceed the allowed hourly or daily actions limits, your actions get blocked by Instagram.
+
+### How long do you get temporarily blocked on Instagram?
+
+If you haven’t been given a date with your action blocked message, the temporary ban can last from a couple hours to a couple days and onward to four weeks. We’ve never heard of a ban lasting longer than four weeks. If you have been given a date, the action block typically ends at the same time of day as when you first received it.
 
 ## Contributing
 
-Want to contribute to making this project better for others? Thanks! There are plenty of ways you can help.
-
-Before you do anything else, please read the [README][readme] of this project first. It will highlight the key features and help you understand the project structure. The rest of this document will help make the contribution process easier.
-
-### Where do I go from here?
+Even the smallest change is appreciated. It can be a typo error or fixing a bug. Nothing is too small to be helpful.
 
 If you noticed a bug or have a question, [open an issue][issues]. I'll try to answer it as fast as possible.
-
-### Can I submit a Pull Request?
-
-Pull requests to fix issues, add improvements, or other features are always appreciated! Good pull requests should be focused and avoid unrelated commits. Including helpful descriptions, titles, and screenshots will make it easier to review.
-
-### What can I contribute to?
-
-Even the smallest change is appreciated. It can be a typo error or fixing a bug. Nothing is too small to be helpful. You can also reach out to [my email][email] if you want to work on an issue.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE][license] file for details.
+
+---
+
+> ## Disclaimer: Risk of Account Ban
+>
+> I'm almost certain that automating user activity violates instagram's TOS, which can result in a permanent ban. Only you are responsible for your accounts.
 
 [readme]: https://github.com/ferhatkefsiz/ig-toolkit#readme
 [issues]: https://github.com/ferhatkefsiz/ig-toolkit/issues
