@@ -69,7 +69,7 @@ async function main() {
       choices: [
         { name: "Get Followers", value: "GET_FOLLOWERS" },
         { name: "Get Followings", value: "GET_FOLLOWINGS" },
-        { name: "Find Unfollowers and Unfollow", value: "GET_UNFOLLOWERS" },
+        { name: "Detect Who Doesn’t Follow You Back and Unfollow", value: "GET_UNFOLLOWERS" },
         { name: "Follow someone else's followers or followings", value: "FOLLOW_OTHER" },
       ],
     },
