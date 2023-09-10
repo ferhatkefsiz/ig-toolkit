@@ -1,39 +1,35 @@
-import fs from "fs/promises"
 import { ig } from "./login"
 import chalk from "chalk"
-import { storeToJSON } from "../utils/store-json"
+import { storeJSON } from "../utils/store-json"
 import { sleepRandom } from "../utils/sleep"
+import { readJSON } from "../utils/read-json"
 
 export async function fetchUnfollowers(): Promise<void> {
   try {
-    const followersData = await fs.readFile("./dist/data/followers.json", "utf-8")
-    const followingsData = await fs.readFile("./dist/data/followings.json", "utf-8")
+    const [followers, followings, whitelisted] = await Promise.all([
+      readJSON("./data/followers.json"),
+      readJSON("./data/followings.json"),
+      readJSON("./data/whitelisted.json"),
+    ])
 
-    const followers = JSON.parse(followersData)
-    const followings = JSON.parse(followingsData)
+    const unfollowersList = await followings.filter(
+      (following: any) =>
+        !followers.includes(following) &&
+        !whitelisted.map((user: any) => `https://www.instagram.com/${user}`).includes(following),
+    )
 
-    const unfollowers = await followings.filter((following) => !followers.includes(following))
+    await storeJSON("./data/unfollowers.json", unfollowersList)
 
-    await storeToJSON("./dist/data/unfollowers.json", unfollowers)
-      .then(() => {
-        console.log(chalk.green("Data written to ./dist/data/unfollowers.json"))
-      })
-      .catch((err) => {
-        console.error(`${chalk.red("Error writing to ./dist/data/unfollowers.json")}: ${err.message}`)
-      })
+    const unfollowers: any = await readJSON("./data/unfollowers.json")
 
-    const unfollowersData = await fs.readFile("./dist/data/unfollowers.json", "utf-8")
-
-    const usersToUnfollowers = JSON.parse(unfollowersData)
-
-    for (const usersToUnfollower of usersToUnfollowers) {
+    for (const unfollower of unfollowers) {
       // this makes "https://www.instagram.com/username" to "username"
-      const username = usersToUnfollower.split("/").slice(-1)[0]
+      const username = unfollower.split("/").slice(-1)[0]
 
       const userId = await ig.user.getIdByUsername(username)
       await ig.friendship.destroy(userId)
 
-      console.log(chalk.yellowBright(`Unfollowed ${usersToUnfollower}`))
+      console.log(chalk.yellowBright(`Unfollowed ${unfollower}`))
 
       await sleepRandom()
     }
