@@ -2,7 +2,7 @@ import { ig } from "./login"
 import chalk from "chalk"
 import { sleepRandom } from "../utils/sleep"
 
-export async function followOtherFollowers(username): Promise<void> {
+export async function followOtherFollowers(username: string): Promise<void> {
   try {
     const targetUsername = `${username}`
 

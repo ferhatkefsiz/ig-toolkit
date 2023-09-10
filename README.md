@@ -71,7 +71,7 @@ Action blocks are typically caused by the exceeded number of actions you perform
 
 ### How long do you get temporarily blocked on Instagram?
 
-If you haven’t been given a date with your action blocked message, the temporary ban can last from a couple hours to a couple days and onward to four weeks. We’ve never heard of a ban lasting longer than four weeks. If you have been given a date, the action block typically ends at the same time of day as when you first received it.
+If you haven’t been given a date with your action blocked message, the temporary ban can last from a couple hours to a couple days and onward to four weeks. I’ve never heard of a ban lasting longer than four weeks. If you have been given a date, the action block typically ends at the same time of day as when you first received it.
 
 ## Contributing
 
