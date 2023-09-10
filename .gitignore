@@ -25,6 +25,9 @@ out/
 *.sln
 *.sw?
 
+# Private Data
+data
+
 # Operating System Files
 Thumbs.db
 .DS_Store
