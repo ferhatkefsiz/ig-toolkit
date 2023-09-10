@@ -15,8 +15,8 @@ An Instagram automation software that simplifies and automates various actions o
   - **Identify Non-Followers:** Detect who does not follow you back and unfollow.
   - **Target User:** Follow someone else's followers or followings
 
-
 ## Upcoming Features
+
 - Two-Factor Authentication (2FA)
 - Approve Pending-requests.
 - Detect blocked users and unblock.
