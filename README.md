@@ -91,5 +91,5 @@ This project is licensed under the MIT License - see the [LICENSE][license] file
 
 [readme]: https://github.com/ferhatkefsiz/ig-toolkit#readme
 [issues]: https://github.com/ferhatkefsiz/ig-toolkit/issues
-[email]: mailto:hello@ferhat.io
+[email]: mailto:hi@ferhat.io
 [license]: https://github.com/ferhatkefsiz/ig-toolkit/blob/master/LICENSE
