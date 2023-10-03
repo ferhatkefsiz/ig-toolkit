@@ -1,8 +1,8 @@
-import { ig } from "./login"
 import chalk from "chalk"
-import { storeJSON } from "../utils/store-json"
-import { sleepRandom } from "../utils/sleep"
-import { readJSON } from "../utils/read-json"
+import { ig } from "@modules/login"
+import { storeJSON } from "@utils/store-json"
+import { sleepRandom } from "@utils/sleep"
+import { readJSON } from "@utils/read-json"
 
 export async function fetchUnfollowers(): Promise<void> {
   try {

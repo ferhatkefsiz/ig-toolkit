@@ -1,9 +1,14 @@
-import { ig } from "./login"
 import chalk from "chalk"
-import { sleepRandom } from "../utils/sleep"
+
+import { ig } from "@modules/login"
+
+import { readJSON } from "@utils/read-json"
+import { sleepRandom } from "@utils/sleep"
 
 export async function followOtherFollowings(username: string): Promise<void> {
   try {
+    const [names] = await Promise.all([readJSON("./data/names.json")])
+
     const targetUsername = `${username}`
 
     const user = await ig.user.searchExact(targetUsername)
@@ -21,7 +26,11 @@ export async function followOtherFollowings(username: string): Promise<void> {
 
     const usernames = allFollowings.map((following: any) => following.username)
 
-    for (const profile of usernames) {
+    const filteredUsernames = usernames.filter((username: any) => {
+      return names.some((filterName: any) => username.includes(filterName))
+    })
+
+    for (const profile of filteredUsernames) {
       try {
         const userId = await ig.user.getIdByUsername(profile)
         await ig.friendship.create(userId)

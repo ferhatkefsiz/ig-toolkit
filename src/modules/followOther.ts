@@ -1,8 +1,8 @@
 import chalk from "chalk"
 import inquirer from "inquirer"
 
-import { followOtherFollowers } from "./followOtherFollowers"
-import { followOtherFollowings } from "./followOtherFollowings"
+import { followOtherFollowers } from "@modules/followOtherFollowers"
+import { followOtherFollowings } from "@modules/followOtherFollowings"
 
 export async function followOther(): Promise<void> {
   try {

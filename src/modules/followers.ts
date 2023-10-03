@@ -1,5 +1,5 @@
-import { ig } from "./login"
-import { storeJSON } from "../utils/store-json"
+import { ig } from "@modules/login"
+import { storeJSON } from "@utils/store-json"
 
 export async function fetchFollowers(): Promise<void> {
   try {

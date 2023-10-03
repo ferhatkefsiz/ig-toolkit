@@ -1,4 +1,4 @@
-import { ig } from "./login"
+import { ig } from "@modules/login"
 
 export async function logout(): Promise<void> {
   try {

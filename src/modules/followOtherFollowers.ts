@@ -1,6 +1,6 @@
-import { ig } from "./login"
+import { ig } from "@modules/login"
 import chalk from "chalk"
-import { sleepRandom } from "../utils/sleep"
+import { sleepRandom } from "@utils/sleep"
 
 export async function followOtherFollowers(username: string): Promise<void> {
   try {

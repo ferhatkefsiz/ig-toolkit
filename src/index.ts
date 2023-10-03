@@ -3,12 +3,12 @@ import figlet from "figlet"
 import chalk from "chalk"
 import dotenv from "dotenv"
 
-import { login } from "./modules/login"
-import { logout } from "./modules/logout"
-import { fetchFollowers } from "./modules/followers"
-import { fetchFollowings } from "./modules/followings"
-import { fetchUnfollowers } from "./modules/unfollowers"
-import { followOther } from "./modules/followOther"
+import { login } from "@modules/login"
+import { logout } from "@modules/logout"
+import { fetchFollowers } from "@modules/followers"
+import { fetchFollowings } from "@modules/followings"
+import { fetchUnfollowers } from "@modules/unfollowers"
+import { followOther } from "@modules/followOther"
 
 dotenv.config()
 
