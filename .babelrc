@@ -11,6 +11,13 @@
       "@babel/preset-typescript"
     ],
     "plugins": [
-      "@babel/plugin-transform-runtime"
+      ["babel-plugin-module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "underscore": "lodash",
+          "@modules": "./dist/modules/",
+          "@utils": "./dist/utils/"
+        }
+      }, "@babel/plugin-transform-runtime"]
     ]
 }
