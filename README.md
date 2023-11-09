@@ -12,6 +12,7 @@ An Instagram automation software that simplifies and automates various actions o
 
 - **Follow Management:**
 
+  - **Whitelist:** people you don't want to unfollow.
   - **Identify Non-Followers:** Detect who does not follow you back and unfollow.
   - **Target User:** Follow someone else's followers or followings
 
