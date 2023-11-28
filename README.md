@@ -16,6 +16,8 @@ An Instagram automation software that simplifies and automates various actions o
   - **Identify Non-Followers:** Detect who does not follow you back and unfollow.
   - **Target User:** Follow someone else's followers or followings
 
+- **Whitelist people you don't want to unfollow**
+
 ## Upcoming Features
 
 - Two-Factor Authentication (2FA)
@@ -27,7 +29,7 @@ An Instagram automation software that simplifies and automates various actions o
 - Upload story.
 - Send direct messages.
 - Target location add people and like posts.
-- Whitelist people you don't want to unfollow.
+
 
 ## Prerequisites
 
